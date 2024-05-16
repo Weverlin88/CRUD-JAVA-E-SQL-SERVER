@@ -1,0 +1,47 @@
+IMPORT#>import java.io.IOException;\
+	\
+	public class GitCommands {\
+	\
+	    public static void main(String[] args) {\
+	        try {\
+	            // Comando para inicializar um repositório Git\
+	            ProcessBuilder initProcess = new ProcessBuilder("git", "init");\
+	            Process init = initProcess.start();\
+	            init.waitFor();\
+	            \
+	            // Comando para adicionar todos os arquivos ao Git\
+	            ProcessBuilder addProcess = new ProcessBuilder("git", "add", ".");\
+	            Process add = addProcess.start();\
+	            add.waitFor();\
+	            \
+	            // Comando para fazer um commit\
+	            ProcessBuilder commitProcess = new ProcessBuilder("git", "commit", "-m", "Primeiro commit");\
+	            Process commit = commitProcess.start();\
+	            commit.waitFor();\
+	            \
+	            // Comando para adicionar o repositório remoto\
+	            ProcessBuilder remoteProcess = new ProcessBuilder("git", "remote", "add", "origin", "https://github.com/Weverlin88/CRUD-JAVA-E-SQL-SERVER.git");\
+	            Process remote = remoteProcess.start();\
+	            remote.waitFor();\
+	            \
+	            // Comando para enviar para o GitHub\
+	            ProcessBuilder pushProcess = new ProcessBuilder("git", "push", "-u", "origin", "master");\
+	            Process push = pushProcess.start();\
+	            push.waitFor();\
+	            \
+	            System.out.println("Projeto enviado para o GitHub com sucesso!");\
+	        } catch (IOException | InterruptedException e) {\
+	            e.printStackTrace();\
+	        }\
+	    }\
+	}
+IMPORT#>import java.io.IOException;\
+	\
+	public class GitCommands {\
+	\
+	    public static void main(String[] args) {\
+	        try {\
+	            // Comando para inicializar um repositório Git\
+	            ProcessBuilder initProcess = new ProcessBuilder("git", "init");\
+	            Process init = initProcess.start();\
+	            init.waitFor();
